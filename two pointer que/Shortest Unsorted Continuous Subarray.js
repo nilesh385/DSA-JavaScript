@@ -27,8 +27,8 @@ Constraints:
 */
 
 const findUnsortedSubarray = function (nums) {
-    let left = 0;
-    let right = 0;
+    let left = -1;
+    let right = -1;
 
     let arr = [...nums];
     arr.sort((a, b) => a - b);
@@ -38,14 +38,14 @@ const findUnsortedSubarray = function (nums) {
             break;
         }
     }
-    for (let j = nums.length - 1; j >= 0; i--) {
-        if (arr[i] !== nums[i]) {
-            right = i;
+    for (let j = nums.length - 1; j >= 0; j--) {
+        if (arr[j] !== nums[j]) {
+            right = j;
             break;
         }
     }
 
-    if (left === 0) return 0;
+    if (left === -1) return 0;
 
     return right - left + 1;
 };
