@@ -49,34 +49,29 @@ import java.util.Stack;
 public class MinTrackingStack {
     public static List<Integer> main(List<String> operations) {
         Stack<Integer> stack = new Stack<>();
+        Stack<Integer> minStack = new Stack<>();
         List<Integer> res = new ArrayList<>();
-        int minVal = Integer.MAX_VALUE;
-        int top = 0;
 
         for (int i = 0; i < operations.size(); i++) {
-            String operation = operations.get(i).substring(0, 4).toLowerCase().trim();
+            String operation = operations.get(i);
             int num = 0;
-            if (operation.equalsIgnoreCase("push"))
+            if (operation.startsWith("push")) {
+
                 num = Integer.parseInt(operations.get(i).substring(5));
-
-            if (operation.equalsIgnoreCase("push")) {
-                if (stack.isEmpty())
-                    top = num;
-
                 stack.push(num);
-                minVal = Integer.min(num, minVal);
-            } else if (operation.equalsIgnoreCase("pop")) {
+                if (minStack.isEmpty() || num <= minStack.peek())
+                    minStack.push(num);
+            } else if (operation.startsWith("pop") && !stack.isEmpty()) {
                 if (!stack.isEmpty()) {
-                    stack.pop();
+                    int popedInt = stack.pop();
+                    if (popedInt == minStack.peek())
+                        minStack.pop();
                 }
 
-                if (!stack.isEmpty())
-                    top = stack.peek();
-
-            } else if (operation.equalsIgnoreCase("top"))
-                res.add(top);
+            } else if (operation.startsWith("top") && !stack.isEmpty())
+                res.add(stack.peek());
             else
-                res.add(minVal);
+                res.add(minStack.peek());
         }
 
         return res;
