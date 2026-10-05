@@ -31,31 +31,29 @@ Constraints:
 1 <= k <= nums.length
 '''
 
+from collections import deque
+
 def maxSlididngWindow(nums,k):
     if len(nums)==1:
         return nums
-
-    low=0
-    high=k-1
+    
     res=[]
-    secondMax=0
+    dq=deque()
 
-    while high<len(nums):
-        # if the res array is empty
-        if len(res)==0:
-            res.append(max(nums[low:high+1]))
-            
+    for i in range(len(nums)):
+        # remove the values out of current window
+        while dq and dq[0]<=i-k:
+            dq.popleft()
 
-        # if the new nums[high] is greater than prev secondMax
-        if secondMax<=nums[high]:
-            res.append(nums[high])
-        else:
-            res.append(secondMax)
+        # remove values less than current value
+        while dq and nums[dq[-1]]<= nums[i]:
+            dq.pop()
 
-        for i in range(low,high):
-            if nums[i]==res[len(res)-1]:
-                continue
-            secondMax=max(secondMax,nums[i])
-        high+=1
-        low+=1
+        #add current value in dq
+        dq.append(i)
+
+        #add the first element of dq to res 
+        if i>=k-1:
+            res.append(nums[dq[0]])
+
     return res
