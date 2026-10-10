@@ -30,21 +30,23 @@ def findMaxLen(nums):
     one=0
     zero=0
     res=0
-    left=0
-    right=0
+    freq={} # difference of 1 and 0 occurances : index
 
-    while right<len(nums):
-        if nums[right]==0:zero+=1
-        else: one+=1
+    for i in range(len(nums)):
+        if nums[i]==0:
+            zero+=1
+        else:
+            one+=1
+        diff= one-zero
 
-        while one==zero:
-            lenn=right-left+1
-            res= max(res,lenn)
-
-            if nums[left]==0: zero-=1
-            else: one-=1
-            low+=1
-
-        right+=1
+        if diff == 0:
+            res= max(res,i+1)
+            continue
+        if diff in freq:
+            last_index= freq.get(diff)
+            lenn= i-last_index
+            res=max(res,lenn)
+        else:
+            freq[diff]=i
 
     return res
