@@ -221,9 +221,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 103.47622466009938,
-			"y": 583.8861432193487,
-			"z": 0.6428556386642921,
+			"x": 340.7052116844071,
+			"y": -167.2407410724059,
+			"z": 0.6995249749323683,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -594,6 +594,45 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 603.9359010926762,
+			"y": 672.1549126877019,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:2KiB37ycFqiFXIUJf8ubp",
+			"type": "geo",
+			"props": {
+				"w": 490.61860093915413,
+				"h": 175.547692824314,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"flipX": false,
+				"flipY": false,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "l",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "b00Q4M",
+			"typeName": "shape"
+		},
+		{
 			"x": 243.04338888834394,
 			"y": 726.4870619080147,
 			"rotation": 0,
@@ -638,7 +677,10 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
+			"selectedShapeIds": [
+				"shape:LoDTmApWfIKFtrWf8P9p-",
+				"shape:2KiB37ycFqiFXIUJf8ubp"
+			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -776,6 +818,60 @@
 			},
 			"parentId": "page:page",
 			"index": "akyDz",
+			"typeName": "shape"
+		},
+		{
+			"x": 623.3776500290782,
+			"y": 699.7566148365827,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:LoDTmApWfIKFtrWf8P9p-",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "l",
+				"w": 464.3999938964844,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Sliding window cannot"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "deal with negative nums"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "azqFj",
 			"typeName": "shape"
 		},
 		{
@@ -1835,11 +1931,8 @@
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:fill": "none",
-				"tldraw:size": "s",
-				"tldraw:dash": "draw",
 				"tldraw:geo": "rectangle",
-				"tldraw:color": "light-green"
+				"tldraw:size": "l"
 			},
 			"brush": null,
 			"scribbles": [],
@@ -1854,8 +1947,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 881.6000366210938,
-				"h": 749.6000366210938
+				"w": 1178.4000244140625,
+				"h": 739.2000122070312
 			},
 			"insets": [
 				false,
@@ -1872,9 +1965,9 @@
 			"isFocused": true,
 			"devicePixelRatio": 1.25,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": false,
 			"openMenus": [],
-			"isChangingStyle": false,
+			"isChangingStyle": true,
 			"isReadonly": false,
 			"meta": {},
 			"duplicateProps": null,
