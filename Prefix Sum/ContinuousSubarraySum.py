@@ -37,14 +37,17 @@ Constraints:
 '''
 
 def checkSubarraySum(nums,k):
-    prefix=1
-    freq={0:1}
+    prefix=0
+    first_seen={0:-1} # remainder : first time occuring index
 
-    for num in nums:
-        prefix*=num
+    for i in range(len(nums)):
+        prefix+=nums[i]
         rem= prefix%k
-        if freq.get(rem):
-            return True
-        freq[rem]=freq.get(rem,0)+1
+        if rem in first_seen:
+            lenn= i-first_seen.get(rem)
+            if lenn>=2:
+                return True
+        else:
+            first_seen[rem]=i
 
     return False
